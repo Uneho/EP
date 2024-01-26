@@ -1,0 +1,235 @@
+﻿<Window x:Class="EducationPortal.RegisterPage"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:EducationPortal"
+        mc:Ignorable="d" Height="650" Width="1080" Background="Transparent" WindowStyle="None"
+        WindowStartupLocation="CenterScreen" AllowsTransparency="True">
+    <Grid Loaded="Grid_Loaded">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="1.25*" />
+        </Grid.ColumnDefinitions>
+
+        <Image Source="Images/LoginWindow/close.png" Grid.Column="1" Panel.ZIndex="1" Style="{StaticResource imgClose}" MouseUp="Image_MouseUp"/>
+
+        <!--inputSection-->
+        <Border Background="#1C1D21">
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="379*"/>
+                    <RowDefinition Height="271*"/>
+                </Grid.RowDefinitions>
+                <Image Source="Images/RegWindow/regFrame.png" Margin="81,36,162,173"/>
+
+                <Border Margin="244,225,30,104" CornerRadius="5">
+                    <Grid Margin="7 9">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="auto" />
+                            <ColumnDefinition Width="*" />
+                        </Grid.ColumnDefinitions>
+
+                        <TextBlock x:Name="textLogin" MouseDown="textLogin_MouseDown" Grid.ColumnSpan="2" Text="Логин" Style="{StaticResource textHint}" Margin="10,7,22,0" />
+                        <TextBox Name="txtLogin" TextChanged="txtLogin_TextChanged" Grid.ColumnSpan="2"  Style="{StaticResource textBox}" Margin="10,7,-7,0" />
+                    </Grid>
+                </Border>
+
+                <Border Margin="244,275,12,62" CornerRadius="5">
+                    <Grid Margin="7,9,30,9">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="auto" />
+                            <ColumnDefinition Width="2*" />
+                            <ColumnDefinition Width="37*"/>
+                        </Grid.ColumnDefinitions>
+
+                        <TextBlock Background="Transparent" x:Name="textPassword" MouseDown="textPassword_MouseDown" Text="Пароль" Style="{StaticResource textHint}" Margin="10,-3,0,0" Grid.Column="1" Grid.ColumnSpan="2" />
+                        <TextBox x:Name="txtBox" Style="{StaticResource textBox}"  Grid.ColumnSpan="3" Margin="10,0,-14,0"/>
+                        <PasswordBox Background="#1C1D21" x:Name="txtPassword" PasswordChanged="txtPassword_PasswordChanged" Style="{StaticResource textBox}" Grid.ColumnSpan="3" Margin="10,0,-14,0" />
+                    </Grid>
+                </Border>
+
+                <Border Margin="244,317,12,20" CornerRadius="5">
+                    <Grid Margin="7,9,30,9">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="auto" />
+                            <ColumnDefinition Width="2*" />
+                            <ColumnDefinition Width="37*"/>
+                        </Grid.ColumnDefinitions>
+
+                        <TextBlock Background="Transparent" x:Name="textRepeatPassword" MouseDown="textRepeatPassword_MouseDown" Text="Повторите пароль" Style="{StaticResource textHint}" Margin="10,-3,0,0" Grid.Column="1" Grid.ColumnSpan="2" />
+                        <TextBox x:Name="txtRepeatBox" Style="{StaticResource textBox}"  Grid.ColumnSpan="3" Margin="10,0,-14,0"/>
+                        <PasswordBox Background="#1C1D21" x:Name="txtRepeatPassword" PasswordChanged="txtRepeatPassword_PasswordChanged" Style="{StaticResource textBox}" Grid.ColumnSpan="3" Margin="10,0,-14,0" />
+                    </Grid>
+                </Border>
+
+                <Border Margin="244,359,12,249" CornerRadius="5" Grid.RowSpan="2">
+                    <Grid Margin="7,9,30,9">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="auto" />
+                            <ColumnDefinition Width="*" />
+                        </Grid.ColumnDefinitions>
+
+                        <TextBlock Background="Transparent" x:Name="textEmail" MouseDown="textEmail_MouseDown" Text="email" Style="{StaticResource textHint}" Margin="10,-3,0,0" Grid.Column="1" />
+                        <TextBox Background="#1C1D21" x:Name="txtEmail" TextChanged="txtEmail_TextChanged" Style="{StaticResource textBox}" Grid.ColumnSpan="2" Margin="10,0,-14,0" />
+
+                    </Grid>
+                </Border>
+
+                <Border Margin="244,27,12,202" CornerRadius="5" Grid.Row="1">
+                    <Grid Margin="7,9,30,9">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="auto" />
+                            <ColumnDefinition Width="*" />
+                        </Grid.ColumnDefinitions>
+
+                        <TextBlock Background="Transparent" x:Name="textGroup" MouseDown="textGroup_MouseDown" Text="Группа" Style="{StaticResource textHint}" Margin="10,-3,0,0" Grid.Column="1" />
+                        <TextBox Background="#1C1D21" x:Name="txtGroup" TextChanged="txtGroup_TextChanged" Style="{StaticResource textBox}" Grid.ColumnSpan="2" Margin="10,0,-14,0" />
+
+                    </Grid>
+                </Border>
+
+                <Border Margin="62,191,236,146" CornerRadius="5">
+                    <Grid Margin="7,9,30,9">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="auto" />
+                            <ColumnDefinition Width="*" />
+                        </Grid.ColumnDefinitions>
+
+                        <TextBlock Background="Transparent" x:Name="textName" MouseDown="textName_MouseDown" Text="Имя" Style="{StaticResource textHint}" Margin="10,-3,0,0" Grid.Column="1" />
+                        <TextBox Background="#1C1D21" x:Name="txtName" TextChanged="txtName_TextChanged" Style="{StaticResource textBox}" Grid.ColumnSpan="2" Margin="10,0,-14,0" />
+
+                    </Grid>
+                </Border>
+
+                <Border Margin="62,233,236,104" CornerRadius="5">
+                    <Grid Margin="7,9,30,9">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="auto" />
+                            <ColumnDefinition Width="*" />
+                        </Grid.ColumnDefinitions>
+
+                        <TextBlock Background="Transparent" x:Name="textLastName" MouseDown="textLastName_MouseDown" Text="Фамилия" Style="{StaticResource textHint}" Margin="10,-3,0,0" Grid.Column="1" />
+                        <TextBox Background="#1C1D21" x:Name="txtLastName" TextChanged="txtLastName_TextChanged" Style="{StaticResource textBox}" Grid.ColumnSpan="2" Margin="10,0,-14,0" />
+
+                    </Grid>
+                </Border>
+
+                <Border Margin="62,275,236,62" CornerRadius="5">
+                    <Grid Margin="7,9,30,9">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="auto" />
+                            <ColumnDefinition Width="*" />
+                        </Grid.ColumnDefinitions>
+
+                        <TextBlock Background="Transparent" x:Name="textSurname" MouseDown="textSurname_MouseDown" Text="Отчество" Style="{StaticResource textHint}" Margin="10,-3,0,0" Grid.Column="1" />
+                        <TextBox Background="#1C1D21" x:Name="txtSurname" TextChanged="txtSurname_TextChanged" Style="{StaticResource textBox}" Grid.ColumnSpan="2" Margin="10,0,-14,0" />
+
+                    </Grid>
+                </Border>
+
+
+                <Border Margin="62,317,236,20" CornerRadius="5">
+                    <Grid Margin="7,9,30,9">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="auto" />
+                            <ColumnDefinition Width="*" />
+                        </Grid.ColumnDefinitions>
+
+                        <TextBlock Background="Transparent" x:Name="textAge" MouseDown="textAge_MouseDown" Text="Возраст" Style="{StaticResource textHint}" Margin="10,-3,0,0" Grid.Column="1" />
+                        <TextBox Background="#1C1D21" x:Name="txtAge" TextChanged="txtAge_TextChanged" Style="{StaticResource textBox}" Grid.ColumnSpan="2" Margin="10,0,-14,0" />
+
+                    </Grid>
+                </Border>
+
+                <Border Margin="62,27,236,202" CornerRadius="5" Grid.Row="1">
+                    <Grid Margin="7,9,30,9">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="auto" />
+                            <ColumnDefinition Width="*" />
+                        </Grid.ColumnDefinitions>
+
+                        <TextBlock Background="Transparent" x:Name="textPhone" MouseDown="textPhone_MouseDown" Text="Контактный номер" Style="{StaticResource textHint}" Margin="10,-3,0,0" Grid.Column="1" />
+                        <TextBox Background="#1C1D21" x:Name="txtPhone" TextChanged="txtPhone_TextChanged" Style="{StaticResource textBox}" Grid.ColumnSpan="2" Margin="10,0,-14,0" />
+
+                    </Grid>
+                </Border>
+
+                <Border Margin="62,359,236,249" CornerRadius="5" Grid.RowSpan="2">
+                    <Grid Margin="7,9,30,9">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="auto" />
+                            <ColumnDefinition Width="*" />
+                        </Grid.ColumnDefinitions>
+
+                        <TextBlock Background="Transparent" x:Name="textBirth" MouseDown="textBirth_MouseDown" Text="Дата рождения" Style="{StaticResource textHint}" Margin="10,-3,3,0" Grid.Column="1" />
+                        <TextBox Background="#1C1D21" x:Name="txtBirth" TextChanged="txtBirth_TextChanged" Style="{StaticResource textBox}" Grid.ColumnSpan="2" Margin="10,0,-14,0" />
+
+                    </Grid>
+                </Border>
+
+                <!--passwordButtons-->
+                <Button x:Name="visiblePass" Margin="422,286,38,73" Style="{StaticResource iconsButton}" Width="20" Click="Button_Reg_Show_Pass_Click">
+                    <Image Source="Images/LoginWindow/hidePass.png"/>
+                </Button>
+
+                <Button x:Name="hiddenPass" Visibility="Hidden" Margin="422,286,38,73" Style="{StaticResource iconsButton}" Click="Button_Reg_Hide_Pass_Click" Width="20" Height="20">
+                    <Image Source="Images/LoginWindow/Eye.png"/>
+                </Button>
+
+                <Button x:Name="visibleRepeatPass" Margin="422,327,38,34" Style="{StaticResource iconsButton}" Width="20" Click="visibleRepeatPass_Click">
+                    <Image Source="Images/LoginWindow/hidePass.png" Height="20"/>
+                </Button>
+
+                <Button x:Name="hiddenRepeatPass" Visibility="Hidden" Margin="422,327,38,32" Style="{StaticResource iconsButton}" Click="hiddenRepeatPass_Click" Width="20" Height="20">
+                    <Image Source="Images/LoginWindow/Eye.png"/>
+                </Button>
+
+                <StackPanel Orientation="Horizontal" Width="300" Height="95" VerticalAlignment="Top" Margin="80,104,100,0" Grid.Row="1">
+                    <Image Source="Images/RegWindow/entryWith.png" Width="113" Height="40" VerticalAlignment="Top" />
+
+                    <Button Width="41" Height="33" Margin="25 0 -20 40" Style="{StaticResource iconsButton}">
+                        <Image Source="Images/RegWindow/google.png" Height="27"/>
+                    </Button>
+
+                    <Button Width="41" Height="33" Margin="25 0 0 40" Style="{StaticResource iconsButton}">
+                        <Image Source="Images/RegWindow/vk.png" Width="37" Height="24"/>
+                    </Button>
+
+                    <Button Content="Регистрация" Style="{StaticResource entryButton}" Width="300" Height="31" 
+                            Margin="-225 10 -30 1" VerticalAlignment="Bottom" Click="Button_Register_User_Click"/>
+                </StackPanel>
+
+                <Image Source="Images/RegWindow/haveAcc.png" Margin="80,233,318,14" Grid.Row="1"/>
+                <Button Content="Войти" Style="{StaticResource createButton}" Margin="220,228,178,11" Click="Button_To_Login_Click" Grid.Row="1"/>
+
+            </Grid>
+        </Border>
+
+
+        <!--rightSection-->
+        <Border Grid.Column="1" Background="#925fe2">
+
+            <Grid Grid.Column="1">
+                <Canvas>
+                    <Image Source="Images/LoginWindow/Vectors/vectorTopRight.png" Canvas.Left="288" HorizontalAlignment="Left" VerticalAlignment="Top" Height="368" Width="312" />
+                    <Image Source="Images/LoginWindow/Vectors/vectorTopMidlle.png" Canvas.Left="174" HorizontalAlignment="Left" VerticalAlignment="Center" Height="160" Width="300"/>
+                    <Image Source="Images/LoginWindow/Vectors/vectorBottomRight.png" Canvas.Left="195" HorizontalAlignment="Center" VerticalAlignment="Top" Height="339" Width="405" Canvas.Top="321"/>
+                    <Image Source="Images/LoginWindow/Vectors/vectorTopRightSmall.png" Canvas.Left="444" HorizontalAlignment="Center" VerticalAlignment="Top" Height="182" Width="159" Canvas.Top="121"/>
+                    <Image Source="Images/LoginWindow/Vectors/vectorButtomLeft.png" Height="198" Width="236" Canvas.Left="193" Canvas.Top="424" HorizontalAlignment="Left" VerticalAlignment="Top"/>
+                    <Image Source="Images/LoginWindow/Vectors/vectorLeft.png" Height="227" Width="174" Canvas.Top="219" HorizontalAlignment="Left" VerticalAlignment="Center"/>
+                </Canvas>
+
+                <StackPanel VerticalAlignment="Top" Margin="69,106,46,0">
+                    <Image Source="Images/RegWindow/regText.png"/>
+                </StackPanel>
+
+                <StackPanel VerticalAlignment="Center" Margin="-40 240 0 0">
+                    <Image Source="Images/LoginWindow/mainLogo.png" Width="670" Height="700"/>
+                </StackPanel>
+
+            </Grid>
+
+        </Border>
+    </Grid>
+</Window>
